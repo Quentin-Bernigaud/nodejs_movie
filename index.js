@@ -23,6 +23,29 @@ router.get('/movies', (req, res) => {
 })
 });
 
+router.post('/add_movie', (req, res) => {
+    const url = req.body;
+    console.log(url);
+    console.log(url.title);
+    console.log(url.date);
+    let sql = `INSERT INTO Movie (title, date) VALUES ('${url.title}', '${url.date}');`, error;
+    if (error) res.status(201).json({ error });
+    res.status(201).json(url);
+    connection.query(sql);
+});
+
+router.post('/edit_movie', (req, res) => {
+    const url = req.body;
+    console.log(url.id);
+    console.log(url.title);
+    console.log(url.date);
+    let sql = `UPDATE Movie SET title = '${url.title}', date = '${url.date}' WHERE id = ${url.id}`, error;
+    if (error) res.status(201).json({ error });
+    res.status(201).json(url);
+    connection.query(sql);
+});
+
+
 // router.get('/add_movie/:title/:date', (req, res) => {
     // connection.query(`INSERT INTO Movie (title, date) VALUES ('${movie_title}', '${movie_date}');`, (err, add_movie) => {
     //     if (error) res.status(201).json({ error });
@@ -40,15 +63,6 @@ router.get('/movies', (req, res) => {
 //     console.log(id);
 // })
 
-router.post('/add_movie', (req, res) => {
-    const url = req.body;
-    console.log(url);
-    console.log(url.title);
-    console.log(url.date);
-    let sql = `INSERT INTO Movie (title, date) VALUES ('${url.title}', '${url.date}');`, error;
-    if (error) res.status(201).json({ error });
-        res.status(201).json(url);
-    connection.query(sql);
 
 
     // axios.get(url)
@@ -59,7 +73,6 @@ router.post('/add_movie', (req, res) => {
     //     if (error) res.status(201).json({ error });
     //     res.status(201).json({ add_movie });
     // })
-});
 
 server.use(router);
 server.listen(port, () => {
