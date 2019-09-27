@@ -45,6 +45,16 @@ router.post('/edit_movie', (req, res) => {
     connection.query(sql);
 });
 
+router.post('/delete_movie', (req, res) => {
+    const url = req.body;
+    console.log(url.id);
+    console.log(url.title);
+    console.log(url.date);
+    let sql = `DELETE FROM Movie WHERE id = ${url.id}`, error;
+    if (error) res.status(201).json({ error });
+    res.status(201).json(url);
+    connection.query(sql);
+});
 
 // router.get('/add_movie/:title/:date', (req, res) => {
     // connection.query(`INSERT INTO Movie (title, date) VALUES ('${movie_title}', '${movie_date}');`, (err, add_movie) => {
