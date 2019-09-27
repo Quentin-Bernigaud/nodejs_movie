@@ -1,0 +1,20 @@
+Créer une API qui permet de gérer une liste de films 
+
+Cette API devra permet de lister ( Tous les films ou un seul ), d'ajouter, d'éditer, et de supprimer des films, contenu une base de donnée MYSQL.
+
+Un film comportera un titre et une année de création.
+
+L' API devra vous permettre également de généner un fichier text, contenant la liste de tous les films présents dans votre base de donnée. 
+Le fichier généré devra être stocké dans un dossier movies présent sur votre serveur.
+Cette route devra retourner le nom du fichier et le répertoire du fichier crée. 
+
+Enfin, l'API devra vous permettre de chercher et récuperer, via l'API d'OMDB, une liste de films ( par titre ).
+Le résultat de recherche devra être affichée à l'utilisateur.
+
+Les informations pour utiliser cette API se trouve à l'adresse suivante : 
+http://www.omdbapi.com
+
+Votre API devra est disponible à l'adresse suivante : http://localhost:3000
+
+Le code source devra être disponible sur un repository git public.
+Le repository comprendra un fichier readme, qui expliquera comment installer votre API et son fonctionnement.
