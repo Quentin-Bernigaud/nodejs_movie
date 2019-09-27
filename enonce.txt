@@ -18,3 +18,5 @@ Votre API devra est disponible à l'adresse suivante : http://localhost:3000
 
 Le code source devra être disponible sur un repository git public.
 Le repository comprendra un fichier readme, qui expliquera comment installer votre API et son fonctionnement.
+
+pierre.lerouge.pro@gmail.com
